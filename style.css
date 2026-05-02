@@ -11,7 +11,6 @@
 
 * {
   all: unset;
-  box-sizing: border-box;
   font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
   font-size: 13px;
   color: @on_surface;
@@ -26,8 +25,6 @@
   background: alpha(@bg, 0.92);
   border-left: 1px solid @outline_dim;
   min-width: 380px;
-  max-width: 380px;
-  padding: 0;
 }
 
 /* ── Header ──────────────────────────────────────────────── */
@@ -72,7 +69,6 @@
 .section {
   background: @surface;
   border-radius: 10px;
-  overflow: hidden;
   border: 1px solid @outline_dim;
 }
 
@@ -159,10 +155,8 @@
   font-size: 11px;
   font-weight: bold;
   color: @primary;
-  text-transform: uppercase;
   letter-spacing: 0.8px;
   padding: 10px 0 4px;
-  opacity: 0.8;
 }
 
 .keybind-row {
@@ -194,7 +188,6 @@
   min-width: 64px;
   min-height: 64px;
   border-radius: 8px;
-  overflow: hidden;
   background: @surface_hi;
   border: 1px solid @outline_dim;
 }
@@ -210,7 +203,6 @@
 .media-art-icon {
   font-size: 32px;
   color: @muted;
-  margin: auto;
 }
 
 .media-title {

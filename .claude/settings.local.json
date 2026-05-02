@@ -21,7 +21,24 @@
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(git -c user.email=\"mathmatician96@gmail.com\" -c user.name=\"cmoser\" add -A)",
-      "Bash(git -c user.email=\"mathmatician96@gmail.com\" -c user.name=\"cmoser\" commit -m \"Initial scaffold: AGS v3/Astal sidebar with v1 features\")"
+      "Bash(git -c user.email=\"mathmatician96@gmail.com\" -c user.name=\"cmoser\" commit -m \"Initial scaffold: AGS v3/Astal sidebar with v1 features\")",
+      "Bash(aura *)",
+      "Bash(pacman -Qs libastal)",
+      "Bash(pacman -Qs aylurs)",
+      "Bash(npm install *)",
+      "Bash(ags --version)",
+      "Read(//usr/share/ags/**)",
+      "Read(//usr/lib/**)",
+      "Bash(npm search *)",
+      "Bash(python3 *)",
+      "Bash(ags --help)",
+      "Bash(ags run *)",
+      "Bash(ags types *)",
+      "Bash(ags -i sidebar request toggle)",
+      "Bash(ags -i sidebar quit)",
+      "Bash(~/.config/waybar/launch.sh)",
+      "Bash(hyprctl reload *)",
+      "Bash(git -c user.email=\"mathmatician96@gmail.com\" -c user.name=\"cmoser\" commit -m \"Fix: use correct ags/* imports, Gtk.Orientation, tsx extensions, GTK4 CSS\")"
     ]
   }
 }
