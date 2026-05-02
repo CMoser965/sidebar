@@ -44,7 +44,8 @@
       "Bash(git -c user.email=\"christianwmoser@proton.me\" -c user.name=\"cmoser\" commit -m \"Add .gitignore, exclude node_modules\")",
       "Bash(grep -v \"^$\\\\|Adwaita\")",
       "Bash(git -c user.email=\"christianwmoser@proton.me\" -c user.name=\"cmoser\" add -A)",
-      "Bash(git -c user.email=\"christianwmoser@proton.me\" -c user.name=\"cmoser\" commit -m \"Fix media Accessor child bug, keybind reveal, redesign UI\")"
+      "Bash(git -c user.email=\"christianwmoser@proton.me\" -c user.name=\"cmoser\" commit -m \"Fix media Accessor child bug, keybind reveal, redesign UI\")",
+      "Bash(git -c user.email=\"christianwmoser@proton.me\" -c user.name=\"cmoser\" commit -m \"Float sidebar with gaps_out margin, rounding, blur layerrule\")"
     ]
   }
 }

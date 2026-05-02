@@ -12,12 +12,16 @@ export default function Sidebar() {
 
     return <window
         name="sidebar"
+        namespace="sidebar"
         class="sidebar"
         application={App}
         anchor={TOP | RIGHT | BOTTOM}
         layer={Astal.Layer.TOP}
         exclusivity={Astal.Exclusivity.NORMAL}
         keymode={Astal.Keymode.ON_DEMAND}
+        marginTop={20}
+        marginRight={20}
+        marginBottom={20}
         visible={false}
     >
         <box class="sidebar-container" orientation={Gtk.Orientation.VERTICAL}>

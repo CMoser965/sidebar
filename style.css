@@ -25,7 +25,8 @@
 
 .sidebar-container {
   background: alpha(#0d110c, 0.96);
-  border-left: 1px solid @outline;
+  border: 1px solid @outline;
+  border-radius: 10px;
   min-width: 360px;
 }
 
@@ -33,6 +34,7 @@
 .sidebar-header {
   background: @surface;
   border-bottom: 1px solid @outline;
+  border-radius: 10px 10px 0 0;
   padding: 12px 16px;
   min-height: 48px;
 }
