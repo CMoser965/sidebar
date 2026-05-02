@@ -1,0 +1,12 @@
+{
+  "name": "sidebar",
+  "private": true,
+  "scripts": {
+    "dev": "ags run app.ts",
+    "build": "ags bundle app.ts dist/bundle.js"
+  },
+  "devDependencies": {
+    "@aylur/ags": "^3.0.0",
+    "typescript": "^5.0.0"
+  }
+}

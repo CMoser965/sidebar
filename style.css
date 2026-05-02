@@ -1,0 +1,291 @@
+/* Material You dark green palette — matches ML4W Matugen output */
+@define-color bg          #10140f;
+@define-color surface     #1d211b;
+@define-color surface_hi  #272b25;
+@define-color surface_top #323630;
+@define-color primary     #a2d399;
+@define-color on_surface  #e0e4db;
+@define-color muted       #c2c8bd;
+@define-color outline     #8c9388;
+@define-color outline_dim #424940;
+
+* {
+  all: unset;
+  box-sizing: border-box;
+  font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+  font-size: 13px;
+  color: @on_surface;
+}
+
+/* ── Window ──────────────────────────────────────────────── */
+.sidebar {
+  background: transparent;
+}
+
+.sidebar-container {
+  background: alpha(@bg, 0.92);
+  border-left: 1px solid @outline_dim;
+  min-width: 380px;
+  max-width: 380px;
+  padding: 0;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.sidebar-header {
+  background: @surface;
+  border-bottom: 1px solid @outline_dim;
+  padding: 14px 16px;
+}
+
+.sidebar-title {
+  font-size: 15px;
+  font-weight: bold;
+  color: @primary;
+  letter-spacing: 0.5px;
+}
+
+.pin-button,
+.close-button {
+  background: transparent;
+  border-radius: 6px;
+  padding: 4px 8px;
+  color: @muted;
+  transition: background 150ms, color 150ms;
+}
+
+.pin-button:hover,
+.close-button:hover {
+  background: @surface_hi;
+  color: @on_surface;
+}
+
+.pin-button.pinned {
+  color: @primary;
+}
+
+/* ── Content area ────────────────────────────────────────── */
+.sidebar-content {
+  padding: 12px;
+}
+
+/* ── Sections ────────────────────────────────────────────── */
+.section {
+  background: @surface;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid @outline_dim;
+}
+
+.section-header {
+  background: transparent;
+  padding: 12px 14px;
+  border-radius: 0;
+  transition: background 120ms;
+}
+
+.section-header:hover {
+  background: @surface_hi;
+}
+
+.section-header-static {
+  padding: 12px 14px;
+  background: transparent;
+}
+
+.section-icon {
+  font-size: 16px;
+  color: @primary;
+  min-width: 22px;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: @on_surface;
+}
+
+.chevron {
+  color: @muted;
+  font-size: 12px;
+}
+
+/* ── Action buttons (Wallpaper / Theme) ──────────────────── */
+.section-actions {
+  margin: 0;
+}
+
+.action-button {
+  background: @surface;
+  border: 1px solid @outline_dim;
+  border-radius: 10px;
+  padding: 16px 8px;
+  transition: background 150ms, border-color 150ms;
+}
+
+.action-button:hover {
+  background: @surface_hi;
+  border-color: @primary;
+}
+
+.action-icon {
+  font-size: 24px;
+  color: @primary;
+}
+
+.action-label {
+  font-size: 12px;
+  color: @muted;
+}
+
+/* ── Keybinds panel ──────────────────────────────────────── */
+.keybinds-content {
+  padding: 8px 14px 14px;
+}
+
+.keybinds-search {
+  background: @surface_hi;
+  border: 1px solid @outline_dim;
+  border-radius: 6px;
+  padding: 6px 10px;
+  color: @on_surface;
+  caret-color: @primary;
+}
+
+.keybinds-search:focus {
+  border-color: @primary;
+}
+
+.keybind-section-label {
+  font-size: 11px;
+  font-weight: bold;
+  color: @primary;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 10px 0 4px;
+  opacity: 0.8;
+}
+
+.keybind-row {
+  padding: 4px 0;
+  border-bottom: 1px solid alpha(@outline_dim, 0.4);
+}
+
+.keybind-combo {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 12px;
+  color: @primary;
+  min-width: 120px;
+  background: alpha(@primary, 0.08);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.keybind-desc {
+  font-size: 12px;
+  color: @muted;
+}
+
+/* ── Media widget ────────────────────────────────────────── */
+.media-player {
+  padding: 12px 14px;
+}
+
+.media-art-box {
+  min-width: 64px;
+  min-height: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: @surface_hi;
+  border: 1px solid @outline_dim;
+}
+
+.media-art {
+  border-radius: 8px;
+}
+
+.media-art-fallback {
+  background: @surface_hi;
+}
+
+.media-art-icon {
+  font-size: 32px;
+  color: @muted;
+  margin: auto;
+}
+
+.media-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: @on_surface;
+}
+
+.media-artist {
+  font-size: 12px;
+  color: @muted;
+}
+
+.media-progress {
+  border-radius: 3px;
+  min-height: 4px;
+  background: @surface_hi;
+}
+
+.media-progress trough {
+  background: @surface_hi;
+  border-radius: 3px;
+  min-height: 4px;
+}
+
+.media-progress trough block {
+  background: @primary;
+  border-radius: 3px;
+  min-height: 4px;
+}
+
+.media-time {
+  font-size: 11px;
+  color: @muted;
+}
+
+.media-controls {
+  margin-top: 4px;
+}
+
+.media-btn {
+  background: @surface_hi;
+  border: 1px solid @outline_dim;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 16px;
+  color: @on_surface;
+  transition: background 120ms, color 120ms;
+}
+
+.media-btn:hover {
+  background: @surface_top;
+  color: @primary;
+}
+
+.media-btn:disabled {
+  opacity: 0.3;
+}
+
+.media-btn-play {
+  background: alpha(@primary, 0.15);
+  border-color: @primary;
+  color: @primary;
+  padding: 8px 18px;
+}
+
+.media-btn-play:hover {
+  background: alpha(@primary, 0.25);
+}
+
+.media-empty {
+  padding: 24px;
+}
+
+.media-empty-label {
+  color: @muted;
+  font-style: italic;
+}
