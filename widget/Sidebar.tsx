@@ -2,6 +2,7 @@ import App from "ags/gtk4/app"
 import { Astal, Gtk } from "ags/gtk4"
 import WallpaperButton from "./WallpaperButton"
 import ThemeButton from "./ThemeButton"
+import WindowsButton from "./WindowsButton"
 import KeybindsPanel from "./KeybindsPanel"
 import MediaWidget from "./MediaWidget"
 
@@ -46,6 +47,7 @@ export default function Sidebar() {
                     <box class="actions-row" spacing={8}>
                         <WallpaperButton />
                         <ThemeButton />
+                        <WindowsButton />
                     </box>
                     <KeybindsPanel />
                 </box>
