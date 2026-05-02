@@ -113,7 +113,7 @@ export default function KeybindsPanel() {
         <revealer
             revealChild={open}
             transitionType={Gtk.RevealerTransitionType.SLIDE_DOWN}
-            transitionDuration={180}
+            transitionDuration={100}
         >
             <box orientation={Gtk.Orientation.VERTICAL} spacing={0} class="keybinds-body">
                 <entry

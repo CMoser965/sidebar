@@ -13,7 +13,7 @@
 /* ── Base ─────────────────────────────────────────────────────── */
 * {
   all: unset;
-  font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+  font-family: "Noto Sans", "Inter", sans-serif;
   font-size: 13px;
   color: @on_surface;
 }
@@ -54,16 +54,12 @@
   min-width: 28px;
   min-height: 28px;
   font-size: 15px;
-  transition: background 120ms, color 120ms;
+  transition: background 60ms, color 60ms;
 }
 
 .header-btn:hover {
   background: @surface_hi;
   color: @on_surface;
-}
-
-.header-btn.pinned {
-  color: @primary;
 }
 
 /* ── Content scroll area ──────────────────────────────────────── */
@@ -88,7 +84,7 @@
   border: 1px solid @outline;
   border-radius: 12px;
   padding: 18px 10px 14px;
-  transition: background 150ms, border-color 150ms;
+  transition: background 80ms, border-color 80ms;
 }
 
 .action-btn:hover {
@@ -192,7 +188,7 @@
   padding: 8px 16px;
   font-size: 16px;
   color: @muted;
-  transition: background 100ms, color 100ms;
+  transition: background 50ms, color 50ms;
 }
 
 .media-btn:hover {
@@ -240,7 +236,7 @@
   background: transparent;
   padding: 12px 14px;
   border-radius: 12px;
-  transition: background 120ms;
+  transition: background 60ms;
 }
 
 .section-toggle:hover {

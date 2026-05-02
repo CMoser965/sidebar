@@ -1,6 +1,5 @@
 import App from "ags/gtk4/app"
 import { Astal, Gtk } from "ags/gtk4"
-import { createState } from "ags"
 import WallpaperButton from "./WallpaperButton"
 import ThemeButton from "./ThemeButton"
 import KeybindsPanel from "./KeybindsPanel"
@@ -8,7 +7,6 @@ import MediaWidget from "./MediaWidget"
 
 export default function Sidebar() {
     const { TOP, RIGHT, BOTTOM } = Astal.WindowAnchor
-    const [pinned, setPinned] = createState(false)
 
     return <window
         name="sidebar"
@@ -28,22 +26,6 @@ export default function Sidebar() {
             {/* Header */}
             <box class="sidebar-header" spacing={8}>
                 <label class="sidebar-title" label="Control Center" hexpand halign={Gtk.Align.START} />
-                <button
-                    class={pinned.as((p) => `header-btn${p ? " pinned" : ""}`)}
-                    tooltipText={pinned.as((p) => (p ? "Unpin" : "Pin"))}
-                    onClicked={() => {
-                        const next = !pinned()
-                        setPinned(next)
-                        const win = App.get_window("sidebar") as Astal.Window | undefined
-                        if (win) {
-                            win.exclusivity = next
-                                ? Astal.Exclusivity.EXCLUSIVE
-                                : Astal.Exclusivity.NORMAL
-                        }
-                    }}
-                >
-                    <label label={pinned.as((p) => (p ? "󰐃" : "󰐄"))} />
-                </button>
                 <button
                     class="header-btn"
                     tooltipText="Close"
