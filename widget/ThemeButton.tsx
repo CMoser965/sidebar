@@ -6,7 +6,7 @@ const THEME_SWITCHER = `${GLib.get_home_dir()}/.config/ml4w/themes/themes.sh`
 
 export default function ThemeButton() {
     return <button
-        class="action-button"
+        class="action-btn"
         tooltipText="Open theme switcher"
         hexpand
         onClicked={() => execAsync(THEME_SWITCHER).catch(console.error)}

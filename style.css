@@ -1,14 +1,16 @@
-/* Material You dark green palette — matches ML4W Matugen output */
+/* ── Palette (Material You dark green, Matugen) ───────────────── */
 @define-color bg          #10140f;
 @define-color surface     #1d211b;
 @define-color surface_hi  #272b25;
 @define-color surface_top #323630;
 @define-color primary     #a2d399;
+@define-color primary_dim #6da864;
 @define-color on_surface  #e0e4db;
-@define-color muted       #c2c8bd;
-@define-color outline     #8c9388;
-@define-color outline_dim #424940;
+@define-color muted       #8c9388;
+@define-color outline     #424940;
+@define-color danger      #ffb4ab;
 
+/* ── Base ─────────────────────────────────────────────────────── */
 * {
   all: unset;
   font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
@@ -16,199 +18,131 @@
   color: @on_surface;
 }
 
-/* ── Window ──────────────────────────────────────────────── */
+/* ── Window shell ─────────────────────────────────────────────── */
 .sidebar {
   background: transparent;
 }
 
 .sidebar-container {
-  background: alpha(@bg, 0.92);
-  border-left: 1px solid @outline_dim;
-  min-width: 380px;
+  background: alpha(#0d110c, 0.96);
+  border-left: 1px solid @outline;
+  min-width: 360px;
 }
 
-/* ── Header ──────────────────────────────────────────────── */
+/* ── Header ───────────────────────────────────────────────────── */
 .sidebar-header {
   background: @surface;
-  border-bottom: 1px solid @outline_dim;
-  padding: 14px 16px;
+  border-bottom: 1px solid @outline;
+  padding: 12px 16px;
+  min-height: 48px;
 }
 
 .sidebar-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: @primary;
+  letter-spacing: 0.3px;
+}
+
+.header-btn {
+  background: transparent;
+  border-radius: 8px;
+  padding: 6px;
+  color: @muted;
+  min-width: 28px;
+  min-height: 28px;
   font-size: 15px;
-  font-weight: bold;
-  color: @primary;
-  letter-spacing: 0.5px;
+  transition: background 120ms, color 120ms;
 }
 
-.pin-button,
-.close-button {
-  background: transparent;
-  border-radius: 6px;
-  padding: 4px 8px;
-  color: @muted;
-  transition: background 150ms, color 150ms;
-}
-
-.pin-button:hover,
-.close-button:hover {
+.header-btn:hover {
   background: @surface_hi;
   color: @on_surface;
 }
 
-.pin-button.pinned {
+.header-btn.pinned {
   color: @primary;
 }
 
-/* ── Content area ────────────────────────────────────────── */
+/* ── Content scroll area ──────────────────────────────────────── */
 .sidebar-content {
-  padding: 12px;
+  padding: 12px 10px;
 }
 
-/* ── Sections ────────────────────────────────────────────── */
-.section {
+/* ── Cards ─────────────────────────────────────────────────────── */
+.card {
   background: @surface;
-  border-radius: 10px;
-  border: 1px solid @outline_dim;
+  border-radius: 12px;
+  border: 1px solid @outline;
 }
 
-.section-header {
-  background: transparent;
-  padding: 12px 14px;
-  border-radius: 0;
-  transition: background 120ms;
-}
-
-.section-header:hover {
-  background: @surface_hi;
-}
-
-.section-header-static {
-  padding: 12px 14px;
-  background: transparent;
-}
-
-.section-icon {
-  font-size: 16px;
-  color: @primary;
-  min-width: 22px;
-}
-
-.section-title {
-  font-size: 13px;
-  font-weight: bold;
-  color: @on_surface;
-}
-
-.chevron {
-  color: @muted;
-  font-size: 12px;
-}
-
-/* ── Action buttons (Wallpaper / Theme) ──────────────────── */
-.section-actions {
+/* ── Action buttons (Wallpaper / Theme) ───────────────────────── */
+.actions-row {
   margin: 0;
 }
 
-.action-button {
+.action-btn {
   background: @surface;
-  border: 1px solid @outline_dim;
-  border-radius: 10px;
-  padding: 16px 8px;
+  border: 1px solid @outline;
+  border-radius: 12px;
+  padding: 18px 10px 14px;
   transition: background 150ms, border-color 150ms;
 }
 
-.action-button:hover {
+.action-btn:hover {
   background: @surface_hi;
   border-color: @primary;
 }
 
+.action-btn:hover .action-icon {
+  color: @on_surface;
+}
+
 .action-icon {
-  font-size: 24px;
+  font-size: 26px;
   color: @primary;
 }
 
 .action-label {
-  font-size: 12px;
-  color: @muted;
-}
-
-/* ── Keybinds panel ──────────────────────────────────────── */
-.keybinds-content {
-  padding: 8px 14px 14px;
-}
-
-.keybinds-search {
-  background: @surface_hi;
-  border: 1px solid @outline_dim;
-  border-radius: 6px;
-  padding: 6px 10px;
-  color: @on_surface;
-  caret-color: @primary;
-}
-
-.keybinds-search:focus {
-  border-color: @primary;
-}
-
-.keybind-section-label {
   font-size: 11px;
-  font-weight: bold;
-  color: @primary;
-  letter-spacing: 0.8px;
-  padding: 10px 0 4px;
-}
-
-.keybind-row {
-  padding: 4px 0;
-  border-bottom: 1px solid alpha(@outline_dim, 0.4);
-}
-
-.keybind-combo {
-  font-family: "JetBrainsMono Nerd Font", monospace;
-  font-size: 12px;
-  color: @primary;
-  min-width: 120px;
-  background: alpha(@primary, 0.08);
-  border-radius: 4px;
-  padding: 2px 6px;
-}
-
-.keybind-desc {
-  font-size: 12px;
   color: @muted;
+  letter-spacing: 0.5px;
 }
 
-/* ── Media widget ────────────────────────────────────────── */
+/* ── Media ─────────────────────────────────────────────────────── */
+.media-section {
+  /* inherits .card */
+}
+
 .media-player {
-  padding: 12px 14px;
-}
-
-.media-art-box {
-  min-width: 64px;
-  min-height: 64px;
-  border-radius: 8px;
-  background: @surface_hi;
-  border: 1px solid @outline_dim;
+  padding: 14px;
 }
 
 .media-art {
-  border-radius: 8px;
+  border-radius: 10px;
+  min-width: 80px;
+  min-height: 80px;
 }
 
 .media-art-fallback {
+  min-width: 80px;
+  min-height: 80px;
+  border-radius: 10px;
   background: @surface_hi;
+  border: 1px solid @outline;
 }
 
 .media-art-icon {
-  font-size: 32px;
+  font-size: 36px;
   color: @muted;
+  margin: 22px;
 }
 
 .media-title {
   font-size: 14px;
   font-weight: bold;
   color: @on_surface;
+  margin-bottom: 2px;
 }
 
 .media-artist {
@@ -216,22 +150,8 @@
   color: @muted;
 }
 
-.media-progress {
-  border-radius: 3px;
-  min-height: 4px;
-  background: @surface_hi;
-}
-
-.media-progress trough {
-  background: @surface_hi;
-  border-radius: 3px;
-  min-height: 4px;
-}
-
-.media-progress trough block {
-  background: @primary;
-  border-radius: 3px;
-  min-height: 4px;
+.media-time-row {
+  margin-top: 4px;
 }
 
 .media-time {
@@ -239,45 +159,150 @@
   color: @muted;
 }
 
+.media-time-sep {
+  color: @outline;
+  font-size: 10px;
+}
+
+.media-progress {
+  min-height: 4px;
+  border-radius: 2px;
+}
+
+.media-progress trough {
+  background: @surface_hi;
+  border-radius: 2px;
+  min-height: 4px;
+}
+
+.media-progress trough block {
+  background: @primary;
+  border-radius: 2px;
+  min-height: 4px;
+}
+
 .media-controls {
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .media-btn {
-  background: @surface_hi;
-  border: 1px solid @outline_dim;
   border-radius: 8px;
-  padding: 8px 14px;
+  padding: 8px 16px;
   font-size: 16px;
-  color: @on_surface;
-  transition: background 120ms, color 120ms;
+  color: @muted;
+  transition: background 100ms, color 100ms;
 }
 
 .media-btn:hover {
-  background: @surface_top;
-  color: @primary;
+  background: @surface_hi;
+  color: @on_surface;
 }
 
 .media-btn:disabled {
-  opacity: 0.3;
+  opacity: 0.25;
 }
 
 .media-btn-play {
-  background: alpha(@primary, 0.15);
-  border-color: @primary;
   color: @primary;
-  padding: 8px 18px;
+  border: 1px solid @outline;
+  padding: 8px 22px;
+  margin: 0 4px;
 }
 
 .media-btn-play:hover {
-  background: alpha(@primary, 0.25);
+  background: alpha(@primary, 0.12);
+  border-color: @primary;
 }
 
 .media-empty {
-  padding: 24px;
+  padding: 28px 16px;
+}
+
+.media-empty-icon {
+  font-size: 22px;
+  color: @outline;
 }
 
 .media-empty-label {
+  font-size: 12px;
   color: @muted;
   font-style: italic;
+}
+
+/* ── Keybinds ──────────────────────────────────────────────────── */
+.keybinds-section {
+  /* inherits .card */
+}
+
+.section-toggle {
+  background: transparent;
+  padding: 12px 14px;
+  border-radius: 12px;
+  transition: background 120ms;
+}
+
+.section-toggle:hover {
+  background: @surface_hi;
+}
+
+.section-icon {
+  font-size: 15px;
+  color: @primary;
+  min-width: 20px;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.chevron {
+  font-size: 11px;
+  color: @muted;
+}
+
+.keybinds-body {
+  padding: 0 14px 14px;
+}
+
+.keybinds-search {
+  background: @surface_hi;
+  border: 1px solid @outline;
+  border-radius: 8px;
+  padding: 7px 12px;
+  color: @on_surface;
+  caret-color: @primary;
+  margin-bottom: 8px;
+}
+
+.keybinds-search:focus {
+  border-color: @primary;
+}
+
+.keybind-group-label {
+  font-size: 10px;
+  font-weight: bold;
+  color: @primary;
+  letter-spacing: 0.8px;
+  padding: 10px 0 5px;
+}
+
+.keybind-row {
+  padding: 5px 0;
+  border-bottom: 1px solid alpha(@outline, 0.5);
+}
+
+.keybind-combo {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 11px;
+  color: @primary;
+  background: alpha(@primary, 0.1);
+  border-radius: 5px;
+  padding: 2px 7px;
+  min-width: 110px;
+}
+
+.keybind-desc {
+  font-size: 12px;
+  color: @muted;
 }

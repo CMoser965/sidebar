@@ -21,16 +21,12 @@ export default function Sidebar() {
         visible={false}
     >
         <box class="sidebar-container" orientation={Gtk.Orientation.VERTICAL}>
+            {/* Header */}
             <box class="sidebar-header" spacing={8}>
-                <label
-                    class="sidebar-title"
-                    label="Control Center"
-                    hexpand
-                    halign={Gtk.Align.START}
-                />
+                <label class="sidebar-title" label="Control Center" hexpand halign={Gtk.Align.START} />
                 <button
-                    class={pinned.as((p) => `pin-button${p ? " pinned" : ""}`)}
-                    tooltipText={pinned.as((p) => (p ? "Unpin sidebar" : "Pin sidebar"))}
+                    class={pinned.as((p) => `header-btn${p ? " pinned" : ""}`)}
+                    tooltipText={pinned.as((p) => (p ? "Unpin" : "Pin"))}
                     onClicked={() => {
                         const next = !pinned()
                         setPinned(next)
@@ -45,21 +41,23 @@ export default function Sidebar() {
                     <label label={pinned.as((p) => (p ? "󰐃" : "󰐄"))} />
                 </button>
                 <button
-                    class="close-button"
+                    class="header-btn"
                     tooltipText="Close"
                     onClicked={() => App.get_window("sidebar")?.set_visible(false)}
                 >
                     <label label="󰅙" />
                 </button>
             </box>
+
+            {/* Scrollable content */}
             <scrolledwindow
                 vexpand
                 hscrollbarPolicy={Gtk.PolicyType.NEVER}
                 vscrollbarPolicy={Gtk.PolicyType.AUTOMATIC}
             >
-                <box class="sidebar-content" orientation={Gtk.Orientation.VERTICAL} spacing={12}>
+                <box class="sidebar-content" orientation={Gtk.Orientation.VERTICAL} spacing={10}>
                     <MediaWidget />
-                    <box class="section-actions" spacing={8}>
+                    <box class="actions-row" spacing={8}>
                         <WallpaperButton />
                         <ThemeButton />
                     </box>

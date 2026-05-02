@@ -3,7 +3,7 @@ import { execAsync } from "ags/process"
 
 export default function WallpaperButton() {
     return <button
-        class="action-button"
+        class="action-btn"
         tooltipText="Open wallpaper picker"
         hexpand
         onClicked={() => execAsync("waypaper").catch(console.error)}

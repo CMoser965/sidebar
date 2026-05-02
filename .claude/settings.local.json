@@ -38,7 +38,13 @@
       "Bash(ags -i sidebar quit)",
       "Bash(~/.config/waybar/launch.sh)",
       "Bash(hyprctl reload *)",
-      "Bash(git -c user.email=\"mathmatician96@gmail.com\" -c user.name=\"cmoser\" commit -m \"Fix: use correct ags/* imports, Gtk.Orientation, tsx extensions, GTK4 CSS\")"
+      "Bash(git -c user.email=\"mathmatician96@gmail.com\" -c user.name=\"cmoser\" commit -m \"Fix: use correct ags/* imports, Gtk.Orientation, tsx extensions, GTK4 CSS\")",
+      "Bash(git -c user.email=\"christianwmoser@proton.me\" -c user.name=\"cmoser\" rm -r --cached node_modules/)",
+      "Bash(git -c user.email=\"christianwmoser@proton.me\" -c user.name=\"cmoser\" add .gitignore)",
+      "Bash(git -c user.email=\"christianwmoser@proton.me\" -c user.name=\"cmoser\" commit -m \"Add .gitignore, exclude node_modules\")",
+      "Bash(grep -v \"^$\\\\|Adwaita\")",
+      "Bash(git -c user.email=\"christianwmoser@proton.me\" -c user.name=\"cmoser\" add -A)",
+      "Bash(git -c user.email=\"christianwmoser@proton.me\" -c user.name=\"cmoser\" commit -m \"Fix media Accessor child bug, keybind reveal, redesign UI\")"
     ]
   }
 }

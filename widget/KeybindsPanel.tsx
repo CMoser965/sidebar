@@ -98,12 +98,12 @@ export default function KeybindsPanel() {
     const [query, setQuery] = createState("")
     const [open, setOpen] = createState(false)
 
-    return <box class="section keybinds-section" orientation={Gtk.Orientation.VERTICAL}>
+    return <box class="card keybinds-section" orientation={Gtk.Orientation.VERTICAL}>
         <button
-            class="section-header"
+            class="section-toggle"
             onClicked={() => setOpen(!open())}
         >
-            <box spacing={8}>
+            <box spacing={10}>
                 <label label="󰌌" class="section-icon" />
                 <label label="Keybinds" class="section-title" hexpand halign={Gtk.Align.START} />
                 <label label={open.as((o) => (o ? "󰅃" : "󰅀"))} class="chevron" />
@@ -111,17 +111,17 @@ export default function KeybindsPanel() {
         </button>
 
         <revealer
-            revealChild={open()}
+            revealChild={open}
             transitionType={Gtk.RevealerTransitionType.SLIDE_DOWN}
-            transitionDuration={200}
+            transitionDuration={180}
         >
-            <box orientation={Gtk.Orientation.VERTICAL} spacing={8} class="keybinds-content">
+            <box orientation={Gtk.Orientation.VERTICAL} spacing={0} class="keybinds-body">
                 <entry
                     class="keybinds-search"
                     placeholderText="Search keybinds…"
                     onChanged={(self: Gtk.Entry) => setQuery(self.text)}
                 />
-                <box orientation={Gtk.Orientation.VERTICAL} spacing={2}>
+                <box orientation={Gtk.Orientation.VERTICAL} spacing={0}>
                     {sections.map(({ section, binds }) => (
                         <KeybindSection section={section} binds={binds} query={query} />
                     ))}
@@ -151,7 +151,7 @@ function KeybindSection({
     })
 
     return <box orientation={Gtk.Orientation.VERTICAL} spacing={0} visible={visible}>
-        <label class="keybind-section-label" label={section} halign={Gtk.Align.START} />
+        <label class="keybind-group-label" label={section} halign={Gtk.Align.START} />
         {binds.map((bind) => (
             <KeybindRow bind={bind} query={query} />
         ))}
