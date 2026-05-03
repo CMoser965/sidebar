@@ -45,7 +45,25 @@
       "Bash(grep -v \"^$\\\\|Adwaita\")",
       "Bash(git -c user.email=\"christianwmoser@proton.me\" -c user.name=\"cmoser\" add -A)",
       "Bash(git -c user.email=\"christianwmoser@proton.me\" -c user.name=\"cmoser\" commit -m \"Fix media Accessor child bug, keybind reveal, redesign UI\")",
-      "Bash(git -c user.email=\"christianwmoser@proton.me\" -c user.name=\"cmoser\" commit -m \"Float sidebar with gaps_out margin, rounding, blur layerrule\")"
+      "Bash(git -c user.email=\"christianwmoser@proton.me\" -c user.name=\"cmoser\" commit -m \"Float sidebar with gaps_out margin, rounding, blur layerrule\")",
+      "Bash(gh auth *)",
+      "Bash(git config *)",
+      "Bash(git -C /home/cmoser/sidebar log --oneline -5)",
+      "Bash(gh repo *)",
+      "Bash(git -C /home/cmoser/sidebar add README.md)",
+      "Bash(git -C /home/cmoser/sidebar commit -m ' *)",
+      "Bash(git -C /home/cmoser/sidebar push)",
+      "Bash(git -C /home/cmoser/sidebar config user.email \"christianwmoser@proton.me\")",
+      "Bash(git -C /home/cmoser/sidebar config user.name \"CMoser965\")",
+      "Bash(git -C /home/cmoser/sidebar add widget/Sidebar.tsx style.css widget/KeybindsPanel.tsx)",
+      "Bash(git -C /home/cmoser/sidebar add AGENTS.md)",
+      "Bash(git -C /home/cmoser/sidebar add widget/WindowsButton.tsx widget/Sidebar.tsx)",
+      "Bash(git -C /home/cmoser/sidebar commit -m \"Add Reboot into Windows button to actions row\")",
+      "Bash(git -C /home/cmoser/sidebar add widget/WindowsButton.tsx)",
+      "Bash(git -C /home/cmoser/sidebar commit -m \"Fix Windows button: embed glyph as JSX expression to survive file save\")",
+      "Bash(hyprctl clients *)",
+      "Bash(hyprctl layers *)",
+      "Bash(ags -i sidebar request open)"
     ]
   }
 }

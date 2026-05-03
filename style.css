@@ -304,3 +304,182 @@
   font-size: 12px;
   color: @muted;
 }
+
+/* ── Stable Diffusion / Image Gen ─────────────────────────────── */
+.sdg-section {
+  /* inherits .card */
+}
+
+.sdg-header {
+  padding: 12px 14px;
+}
+
+.sdg-icon {
+  font-size: 15px;
+  color: @primary;
+  min-width: 20px;
+}
+
+.sdg-body {
+  padding: 0 14px 14px;
+}
+
+.sdg-gen-ui {
+  padding: 4px 0;
+}
+
+.sdg-input {
+  background: @surface_hi;
+  border: 1px solid @outline;
+  border-radius: 8px;
+  padding: 7px 12px;
+  color: @on_surface;
+  caret-color: @primary;
+  font-size: 12px;
+}
+
+.sdg-input:focus {
+  border-color: @primary;
+}
+
+.sdg-prompt {
+  min-height: 40px;
+}
+
+.sdg-negative {
+  min-height: 36px;
+}
+
+.sdg-selectors {
+  margin: 4px 0;
+}
+
+.sdg-label-sm {
+  font-size: 10px;
+  font-weight: bold;
+  color: @primary;
+  letter-spacing: 0.5px;
+}
+
+.sdg-refresh-btn {
+  background: transparent;
+  border: none;
+  padding: 4px;
+  color: @muted;
+  font-size: 14px;
+  transition: color 50ms;
+}
+
+.sdg-refresh-btn:hover {
+  color: @primary;
+}
+
+.sdg-embed-list {
+  padding: 2px 0;
+}
+
+.sdg-embed-refresh {
+  margin-bottom: 4px;
+}
+
+.sdg-generate-btn {
+  background: @primary;
+  color: @bg;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: bold;
+  font-size: 13px;
+  transition: background 80ms, opacity 80ms;
+}
+
+.sdg-generate-btn:hover {
+  background: @primary_dim;
+  color: @on_surface;
+}
+
+.sdg-generate-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.sdg-error {
+  font-size: 11px;
+  color: @danger;
+  padding: 6px 0;
+  text-align: center;
+}
+
+.sdg-preview-img {
+  border-radius: 8px;
+  border: 1px solid @outline;
+  max-width: 280px;
+}
+
+.sdg-save-btn {
+  background: @surface_hi;
+  border: 1px solid @outline;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 11px;
+  color: @primary;
+  transition: background 60ms;
+}
+
+.sdg-save-btn:hover {
+  background: @surface_top;
+}
+
+.sdg-setup {
+  padding: 16px 8px;
+}
+
+.sdg-dot {
+  font-size: 14px;
+  min-width: 16px;
+}
+
+.sdg-dot-warning {
+  color: #f0ad4e;
+}
+
+.sdg-dot-error {
+  color: @danger;
+}
+
+.sdg-install-cmd {
+  background: @surface_hi;
+  border: 1px solid @outline;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.sdg-code {
+  font-family: "JetBrainsMono Noto Font", monospace;
+  font-size: 10px;
+  color: @on_surface;
+  background: alpha(@primary, 0.06);
+  border-radius: 4px;
+  padding: 6px 8px;
+}
+
+.sdg-launch-btn {
+  background: @surface_hi;
+  border: 1px solid @primary_dim;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: @primary;
+  font-weight: bold;
+  transition: background 80ms;
+}
+
+.sdg-launch-btn:hover {
+  background: @surface_top;
+  border-color: @primary;
+}
+
+.sdg-setup-hint {
+  font-size: 11px;
+  color: @muted;
+  font-style: italic;
+}

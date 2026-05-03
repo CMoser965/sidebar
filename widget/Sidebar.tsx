@@ -5,6 +5,7 @@ import ThemeButton from "./ThemeButton"
 import WindowsButton from "./WindowsButton"
 import KeybindsPanel from "./KeybindsPanel"
 import MediaWidget from "./MediaWidget"
+import SDGImageWidget from "./SDGImageWidget"
 
 export default function Sidebar() {
     const { TOP, RIGHT, BOTTOM } = Astal.WindowAnchor
@@ -50,6 +51,7 @@ export default function Sidebar() {
                         <WindowsButton />
                     </box>
                     <KeybindsPanel />
+                    <SDGImageWidget />
                 </box>
             </scrolledwindow>
         </box>
